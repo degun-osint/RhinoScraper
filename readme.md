@@ -1,3 +1,10 @@
+```
+▗▄▄▖ ▐▌   ▄ ▄▄▄▄   ▄▄▄   ▗▄▄▖▗▞▀▘ ▄▄▄ ▗▞▀▜▌▄▄▄▄  ▗▞▀▚▖ ▄▄▄ 
+▐▌ ▐▌▐▌   ▄ █   █ █   █ ▐▌   ▝▚▄▖█    ▝▚▄▟▌█   █ ▐▛▀▀▘█    
+▐▛▀▚▖▐▛▀▚▖█ █   █ ▀▄▄▄▀  ▝▀▚▖    █         █▄▄▄▀ ▝▚▄▄▖█    
+▐▌ ▐▌▐▌ ▐▌█             ▗▄▄▞▘              █               
+                                           ▀  
+```
 # RhinoScraper
 
 RhinoScraper is a Python script that analyzes web pages, extracting various types of information and following internal links to a specified depth.
