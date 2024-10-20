@@ -12,7 +12,7 @@ RhinoScraper is a Python script that analyzes web pages, extracting various type
 ## Features
 
 - Extracts HTML comments
-- Detects Google Analytics codes and other Google tags
+- Detects Google Analytics codes and other Google tags (or not...)
 - Finds meta tags related to authors and users
 - Extracts email addresses
 - Follows internal links to a user-specified depth
