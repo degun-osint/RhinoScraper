@@ -36,16 +36,11 @@ def extract_info(url, depth=0, max_depth=2):
         for pattern in ga_patterns:
             ga_codes.extend(re.findall(pattern, response.text))
 
-        # Capture meta tag content
-        meta_tags = []
-        for tag in soup.find_all('meta'):
-            name = tag.get('name', '').lower()
-            property = tag.get('property', '').lower()
-            content = tag.get('content', '')
-
-            if name in ['author', 'creator', 'contributor', 'publisher', 'user'] or \
-                    property in ['article:author', 'profile:username', 'og:author']:
-                meta_tags.append(content)
+        # Updated meta tags extraction to include author and additional metadata
+        meta_tags = soup.find_all('meta',
+                                  attrs={'name': re.compile(r'author|creator|contributor|publisher|user', re.I)})
+        meta_tags.extend(
+            soup.find_all('meta', attrs={'property': re.compile(r'article:author|profile:username|og:author', re.I)}))
 
         emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', response.text)
         internal_links = [urljoin(url, a['href']) for a in soup.find_all('a', href=True)
@@ -55,7 +50,7 @@ def extract_info(url, depth=0, max_depth=2):
             'url': url,
             'comments': [str(c) for c in comments],
             'google_tags': [str(t) for t in google_tags] + ga_codes,
-            'meta_tags': meta_tags,
+            'meta_tags': [str(t) for t in meta_tags],
             'emails': emails,
             'internal_links': {}
         }
@@ -90,9 +85,6 @@ def display_results(consolidated):
         print(f"\n{Fore.CYAN}Results for domain: {domain}{Style.RESET_ALL}")
         for key, items in data.items():
             print(f"{Fore.GREEN}{key.capitalize()}: {len(items)} unique{Style.RESET_ALL}")
-            if key == 'meta_tags':
-                for item in items:
-                    print(f"  - {item}")
 
 
 def generate_html(consolidated):
