@@ -466,13 +466,6 @@ def generate_html(results):
         border-radius: 4px;
         font-family: monospace;
     }
-    .legal-section {
-        background: #f8f9fa;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 5px;
-        border-left: 4px solid #6c757d;
-    }
     </style>
     """
 
@@ -583,26 +576,6 @@ def generate_html(results):
                 '''
         html += "</div>"
 
-        # Legal Information Section
-        html += '<div class="card">'
-        html += "<h3>Legal Information</h3>"
-        legal_info = data.get('legal_info', {})
-
-        if legal_info.get('registration_numbers'):
-            html += '<div class="legal-section">'
-            html += "<h4>Registration Numbers</h4>"
-            for reg in legal_info['registration_numbers']:
-                html += f"<p><strong>{reg['type']}:</strong> {reg['value']}</p>"
-            html += "</div>"
-
-        if legal_info.get('addresses'):
-            html += '<div class="legal-section">'
-            html += "<h4>Addresses</h4>"
-            for address in legal_info['addresses']:
-                html += f"<p>{address}</p>"
-            html += "</div>"
-            html += "</div>"
-        html += "</div>"
 
     # Footer
     html += """
