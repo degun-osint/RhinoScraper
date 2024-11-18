@@ -1,6 +1,6 @@
-# 🦏 RhinoScraper
+# 🦏 RhinoScraper v 0.2
 
-RhinoScraper is an advanced OSINT (Open Source Intelligence) tool designed to analyze websites and extract various types of information, including security data, contact details, technologies used, and legal information.
+RhinoScraper is an advanced OSINT (Open Source Intelligence) tool designed to analyze websites and extract various types of information, including security data, contact details, technologies used.
 
 ```
 ▗▄▄▖ ▐▌   ▄ ▄▄▄▄   ▄▄▄   ▗▄▄▖▗▞▀▘ ▄▄▄ ▗▞▀▜▌▄▄▄▄  ▗▞▀▚▖ ▄▄▄ 
@@ -9,6 +9,9 @@ RhinoScraper is an advanced OSINT (Open Source Intelligence) tool designed to an
 ▐▌ ▐▌▐▌ ▐▌█             ▗▄▄▞▘              █               
                                            ▀               
 ```
+# DISCLAIMER
+
+This script is currently beta. Use at your own risks
 
 ## Features
 
@@ -65,7 +68,7 @@ pip install -r requirements.txt
 
 Run the script:
 ```bash
-python rhinoscraper.py
+python main.py
 ```
 
 The tool will prompt you for:
